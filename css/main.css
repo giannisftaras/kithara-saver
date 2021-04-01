@@ -1,0 +1,116 @@
+.w250 {
+    width: 250px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.primary_button {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid;
+    border-radius: 16px;
+    margin: 15px auto 15px auto;
+    background-color: transparent;
+    color: #cd3227;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all .2s ease-in-out;
+}
+
+.settings-body .primary_button {
+    padding: 10px 45px;
+}
+
+.settings-body .footer {
+    padding: 40px;
+    background-color:#606060;
+    color: white;
+    overflow: hidden;
+}
+
+.settings-body .footer a {
+    color: white;
+}
+
+.primary_button:disabled {
+    cursor: default;
+    opacity: 0.6;
+}
+
+.primary_button:hover:not(:disabled) {
+    background-color: #cd3227;
+    color: white;
+}
+
+.primary_button svg {
+    margin-right: 8px;
+}
+
+.primary_button:hover:not(:disabled) svg {
+    stroke: white;
+}
+
+.link-btn {
+    display: inline-block;
+    color: #525252;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.link-btn:hover {
+    text-decoration: underline;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.ml-5 {
+    margin-left: 5px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.m-unset {
+    margin: unset;
+}
+
+.settings-title {
+    text-align: center;
+    margin: auto;
+    margin-bottom: 4vh;
+}
+
+.settings-title h1 {
+    background-color: #cd3227;
+    color: white;
+    line-height: 1;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.dfalc {
+    display: flex;
+    align-items: center;
+}
+
+#err-message {
+    display: none;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.max-width-650 {
+    max-width: 650px;
+}

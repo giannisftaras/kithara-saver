@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ρυθμίσεις - Kithara.to - Αποθήκευση τραγουδιών</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+    </head>
+<body class="font-size-16 settings-body">
+
+    <div class="settings-title">
+        <a href="https://kithara.to/" target="_blank">
+            <img src="/images/kithara-logo.png" alt="kithara.to">
+        </a>
+        <h1>Ρυμίσεις</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>Το συγκεκριμένο πρόσθετο σας επιτρέπει να αποθηκεύσετε μεμονομένα τραγούδια σε αρχεία κειμένου ώστε να έχετε μετέπειτα πρόσβαση εκτός σύνδεσης. Κατά τη λήψη λαμβάνονται υπόψιν όλες οι ρυθμίσεις του χρήστη στη σελίδα του <a href="https://kithara.to/" target="_blank">kithara.to</a> όπως αλλαγή τόνου, απόκρυψη/εμφάνιση συγχορδιών, κ.α.</p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Προσθήκη παραμέτρων στο αρχείο</h5>
+                        <div class="form-check">
+                            <input type="checkbox" id="save-url-to-file" class="form-check-input" name="sutf">
+                            <label for="save-url-to-file" class="form-check-label">Προσθήκη συνδέσμου τραγουδιού</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="save-album-to-file" class="form-check-input" name="satf">
+                            <label for="save-album-to-file" class="form-check-label">Προσθήκη χρονολογίας και ονόματος άλμπουμ</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="save-songwriter-to-file" class="form-check-input" name="sstf">
+                            <label for="save-songwriter-to-file" class="form-check-label">Προσθήκη στιχουργού και συνθέτη</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-check">
+                            <input type="checkbox" id="browse-on-save" class="form-check-input" name="bosave">
+                            <label for="browse-on-save" class="form-check-label">Ερώτηση κάθε φορα για τη διαδρομή αποθήκευσης</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Προεπιλεγμένη μορφή τίτλου για το αρχείο</h5>
+                        <select name="save_name_order" id="save_name_order" class="form-select">
+                            <option value="sno_fs">Καλλιτέχνης - Τίτλος τραγουδιού</option>
+                            <option value="sno_ft">Τίτλος τραγουδιού - Καλλιτέχνης</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <div class="d-flex align-items-center">
+                    <button id="save-options" class="primary_button ml-auto mr-0">Αποθήκευση</button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col">
+                <div class="alert alert-primary" role="alert">
+                    <strong>Αποποίηση ευθύνης:</strong> Το συγκεκριμένο πρόσθετο δεν αποτελεί επίσημη λύση από τους δημιουργούς - διαχειριστές της σελίδας του <a href="https://kithara.to/" target="_blank">kithara.to</a>, και δεν υπάρχει ουδεμία υπόνοια που να υποστηρίζει το αντίθετο.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-absolute top-0 end-0 p-3">
+        <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <span id="status"></span>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer mt-3">
+        <div>
+            <p>Για πληροφορίες - αντιμετώπιση προβλημάτων επικοινωνήστε με:</p>
+            <ul>
+                <li>Για τη σελίδα - με το <a href="https://kithara.to/contact" target="_blank">kithara.to</a></li>
+                <li>Για το πρόσθετο - αποστολή email στο <a href="mailto:me@giannisftaras.dev" target="_blank">me@giannisftaras.dev</a></li>
+            </ul>
+        </div>
+        <p class="mb-0">Σας άρεσε το πρόσθετο; <a href="https://www.buymeacoffee.com/giannisftaras" target="_blank">Buy Me a Coffee</a></p>
+    </div>
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/options.js"></script>
+
+</body>
+</html>
