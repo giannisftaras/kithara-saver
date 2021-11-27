@@ -1,5 +1,5 @@
 # kithara-saver
-![](https://img.shields.io/badge/version-1.0.2-blue) ![](https://img.shields.io/github/issues/giannisftaras/kithara-saver) ![](https://img.shields.io/github/stars/giannisftaras/kithara-saver) ![](https://img.shields.io/badge/licence-MIT-lightgrey)
+![](https://img.shields.io/badge/version-1.0.3-blue) ![](https://img.shields.io/github/issues/giannisftaras/kithara-saver) ![](https://img.shields.io/github/stars/giannisftaras/kithara-saver) ![](https://img.shields.io/badge/licence-MIT-lightgrey)
 
 An extension to save your favorite songs from kithara.to to a text file.
 
