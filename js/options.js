@@ -25,7 +25,7 @@ function restore_options() {
         kt_save_url: false,
         kt_save_album: false,
         kt_save_songwriter: false,
-        kt_browse_on_save: true,
+        kt_browse_on_save: false,
         kt_title_order: "sno_fs"
     }, function(items) {
         document.getElementById('save-url-to-file').checked = items.kt_save_url;

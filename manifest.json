@@ -1,13 +1,16 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Kithara - Αποθήκευση τραγουδιών",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Αποθηκεύστε τα αγαπημένα σας τραγούδια, μεμονομένα, από το kithara.to σε αρχεία κειμένου.",
     "homepage_url": "https://giannisftaras.dev/",
     "permissions": [
-        "contextMenus", "tabs", "activeTab", "storage", "downloads"
+        "contextMenus", "tabs", "activeTab", "storage", "downloads", "scripting"
     ],
-    "browser_action": {
+    "host_permissions": [
+        "https://kithara.to/"
+    ],
+    "action": {
         "default_icon": "/images/icon-128.png",
         "default_popup": "main-view.html"
     },
@@ -16,7 +19,7 @@
         "open_in_tab": true
     },
     "background": {
-        "scripts": ["/js/background.js"]
+        "service_worker": "/js/background.js"
     },
     "icons": {
         "16": "/images/icon-16.png",

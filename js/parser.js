@@ -1,9 +1,6 @@
 getParse();
 
 function getParse() {
-
-    
-
     // Parse specific items from the current song 
 
     // Get the lyrics and chords

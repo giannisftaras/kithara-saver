@@ -22,61 +22,62 @@ document.addEventListener('DOMContentLoaded', function() {
 
 }, false);
 
-function saveStixous() {
-
+async function saveStixous() {
     const save = async function save_function(contents) {
-        if (contents[0][0] !== "") {
+        if (contents[0]['result'][0] !== "") {
+            // Load extension settings
             chrome.storage.sync.get({
                 kt_save_url: false,
                 kt_save_album: false,
                 kt_save_songwriter: false,
-                kt_browse_on_save: true,
+                kt_browse_on_save: false,
                 kt_title_order: "sno_fs"
             }, function(items) {
                 var pre_content = "";
-                var content = contents[0][0];
+                var content = contents[0]['result'][0];
 
                 // Check settings to save in file
                 if (items.kt_save_url) {
-                    pre_content += "Σύνδεσμος τραγουδιού: " + contents[0][1] + "\n";
+                    pre_content += "Σύνδεσμος τραγουδιού: " + contents[0]['result'][1] + "\n";
                 }
                 if (items.kt_save_album) {
-                    pre_content += "Έτος άλμπουμ: " + contents[0][2] + "\n";
-                    pre_content += "Όνομα άλμπουμ: " + contents[0][3] + "\n";
+                    pre_content += "Έτος άλμπουμ: " + contents[0]['result'][2] + "\n";
+                    pre_content += "Όνομα άλμπουμ: " + contents[0]['result'][3] + "\n";
                 }
                 if (items.kt_save_songwriter) {
                     pre_content += contents[0][4] + "\n";
                 }
 
                 if (items.kt_title_order == "sno_fs") {
-                    var file_title = contents[0][5] + " - " + contents[0][6] + ".txt";
+                    var file_title = contents[0]['result'][5] + " - " + contents[0]['result'][6] + ".txt";
                 } else {
-                    var file_title = contents[0][6] + " - " + contents[0][5] + ".txt";
+                    var file_title = contents[0]['result'][6] + " - " + contents[0]['result'][5] + ".txt";
                 }
                 
                 if (pre_content !== "") {
                     content = pre_content + "\n" + content;
                 }
-                var blob = new Blob([content], {type: "text/plain"});
-                var url = URL.createObjectURL(blob);
+
+                // Save the file
+                var url = 'data:text/plain;charset=utf-8;base64,' + btoa(unescape(encodeURIComponent(content)));
                 chrome.downloads.download({
                     url: url,
                     filename: file_title,
                     saveAs: items.kt_browse_on_save
-                });
+                });                    
             });
-        } else {
-            document.getElementById("err-message").innerHTML = "Η σελίδα που προσπαθείτε να αποθηκεύσετε δεν είναι σωστή.";
-            document.getElementById("err-message").style.display = "block";
-            setTimeout(function() {
-                document.getElementById("err-message").innerHTML = "";
-                document.getElementById("err-message").style.display = "none";
-            }, 2500);
         }
     }
-
-    chrome.tabs.executeScript({  
-        file: '/js/parser.js'
+    // Run the page parser script
+    var tab = await getCurrentTab();
+    chrome.scripting.executeScript({
+        target: {tabId: tab.id},
+        files: ['/js/parser.js']
     }, save);
+}
 
+async function getCurrentTab() {
+    let queryOptions = { active: true, currentWindow: true };
+    let [tab] = await chrome.tabs.query(queryOptions);
+    return tab;
 }
