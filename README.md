@@ -25,4 +25,4 @@ In the settings menu you can also find the following options:
 **Download & Install:**
 You can download the extension from the [releases section](https://github.com/giannisftaras/kithara-saver/releases "releases section") or get it from the [official Chrome Web Store](https://chrome.google.com/webstore/detail/kithara-%CE%B1%CF%80%CE%BF%CE%B8%CE%AE%CE%BA%CE%B5%CF%85%CF%83%CE%B7-%CF%84%CF%81%CE%B1%CE%B3%CE%BF%CF%85/ppiokpkojmjoclffflgjgadlkfpjhidg "official Chrome Web Store"). For more information on how to manually install the extension, [view this guide](https://dev.to/ben/how-to-install-chrome-extensions-manually-from-github-1612 "view this guide").
 
-The extension was tested only on Chrome versions 89.0.4389.128 and later (Windows 10 x64), but should also work on other Chromium browsers and operating systems.
+The extension was tested only on Windows 10 Pro x64 and the latest version of Google Chrome, but should also work on other Chromium browsers and operating systems.
